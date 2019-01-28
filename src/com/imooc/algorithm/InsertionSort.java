@@ -25,7 +25,7 @@ public class InsertionSort {
             //写法3
             Comparable e = arr[i];
             int j = i;
-            for (; j > 0 && arr[j - 1].compareTo(e) > 0; j--){
+            for (; j > 0 && arr[j - 1].compareTo(e) > 0; j--) {
                 arr[j] = arr[j - 1];
             }
             arr[j] = e;
