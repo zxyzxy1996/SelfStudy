@@ -1,11 +1,12 @@
 package com.imooc.algorithm;
 
-public class SelectionSort {
-    private SelectionSort() {
+public class SelectionSort implements SortInterface{
+    public SelectionSort() {
 
     }
 
-    public static void sort(Comparable[] arr) {
+    @Override
+    public Object[] sort(Comparable[] arr) {
         for (int i = 0; i < arr.length; i++) {
 
             int minIndex = i;
@@ -16,23 +17,13 @@ public class SelectionSort {
             }
             swap(arr, i, minIndex);
         }
+
+        return arr;
     }
 
     private static void swap(Object[] arr, int i, int j) {
         Object t = arr[i];
         arr[i] = arr[j];
         arr[j] = t;
-    }
-
-    public static void main(String[] args) {
-        Integer arr[] = {4, 3, 5, 6, 7, 9, 1, 10};
-        SelectionSort.sort(arr);
-
-        for (int num : arr) {
-            System.out.print(num);
-            System.out.print(' ');
-        }
-
-        System.out.println();
     }
 }
