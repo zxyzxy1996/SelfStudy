@@ -1,6 +1,4 @@
-package com.imooc.algorithm;
-
-import java.util.Arrays;
+package com.imooc.algorithm.sort;
 
 public class AlgorithmTest {
     public static void main(String[] args) {

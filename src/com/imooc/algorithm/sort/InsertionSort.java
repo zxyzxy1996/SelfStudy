@@ -1,4 +1,4 @@
-package com.imooc.algorithm;
+package com.imooc.algorithm.sort;
 
 public class InsertionSort implements SortInterface{
     public InsertionSort() {
