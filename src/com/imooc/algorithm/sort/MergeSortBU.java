@@ -34,7 +34,7 @@ public class MergeSortBU implements SortInterface{
         for (int size = 1; size < n; size += size) {
             for (int i = 0; i < n - size; i += size + size) {
                 // 对 arr[i...i+sz-1] 和 arr[i+sz...i+2*sz-1] 进行归并
-                if (arr[i = size - 1].compareTo(arr[i + size]) > 0) {
+                if (arr[i + size - 1].compareTo(arr[i + size]) > 0) {
                     // 对于arr[mid] <= arr[mid+1]的情况,不进行merge
                     merge(arr, i, i + size - 1, Math.min(i + size + size - 1, n - 1));
                 }
