@@ -1,5 +1,13 @@
 package com.myself.code;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
 public class Sum {
     public static int sum(int[] arr) {
         return sum(arr, 0);
@@ -13,8 +21,22 @@ public class Sum {
         return arr[l] + sum(arr, l + 1);
     }
 
+    private final Map<String, String> map = new HashMap<>();
+
+    public void putMap(String key, String value) {
+        map.put(key, value);
+    }
+
+    public String getMap(String key) {
+        return map.get(key);
+    }
+
     public static void main(String[] args) {
-        int[] sums = {1, 2, 3};
-        System.out.println(sum(sums));
+
+        Sum sum = new Sum();
+        sum.putMap("a","b");
+        String a = sum.getMap("a");
+
+        System.out.println(a);
     }
 }

@@ -1,13 +1,14 @@
 package com.imooc.algorithm.sort;
 
-import java.lang.reflect.Method;
 
 public class SortTestHelper {
     public SortTestHelper() {
 
     }
 
-    //生成有n个元素的随机数组，每个元素的随即范围为[rangeL,rangeR]
+    /**
+     * 生成有n个元素的随机数组，每个元素的随即范围为[rangeL,rangeR]
+     */
     public Comparable[] generateRandomArray(int n, int rangeL, int rangeR) {
         if (rangeL >= rangeR) {
             throw new IllegalArgumentException("Range error, RangeR must larger than rangeL");
@@ -16,16 +17,22 @@ public class SortTestHelper {
         Integer arr[] = new Integer[n];
 
         for (int i = 0; i < n; i++) {
-            arr[i] = new Integer((int) (Math.random() * (rangeR - rangeL + 1) + rangeL));
+            arr[i] = (int) (Math.random() * (rangeR - rangeL + 1) + rangeL);
         }
         return arr;
     }
 
-    // 生成一个近乎有序的数组
-    // 首先生成一个含有[0...n-1]的完全有序数组, 之后随机交换swapTimes对数据
-    // swapTimes定义了数组的无序程度:
-    // swapTimes == 0 时, 数组完全有序
-    // swapTimes 越大, 数组越趋向于无序
+    /**
+     * 生成一个近乎有序的数组
+     * 首先生成一个含有[0...n-1]的完全有序数组, 之后随机交换swapTimes对数据
+     * swapTimes定义了数组的无序程度:
+     * swapTimes == 0 时, 数组完全有序
+     * swapTimes 越大, 数组越趋向于无序
+     *
+     * @param n
+     * @param swapTimes
+     * @return
+     */
     public Comparable[] generateNearlyOrderedArray(int n, int swapTimes) {
         Integer[] arr = new Integer[n];
         for (int i = 0; i < n; i++) {
@@ -43,7 +50,10 @@ public class SortTestHelper {
         return arr;
     }
 
-    // 打印arr数组的所有内容
+    /**
+     * 打印arr数组的所有内容
+     * @param arr
+     */
     public void printArray(Object[] arr) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i]);
@@ -52,7 +62,11 @@ public class SortTestHelper {
         System.out.println();
     }
 
-    //判断数组是否有序
+    /**
+     * 判断数组是否有序
+     * @param arr
+     * @return
+     */
     public boolean isSorted(Comparable[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
             if (arr[i].compareTo(arr[i + 1]) > 0) {

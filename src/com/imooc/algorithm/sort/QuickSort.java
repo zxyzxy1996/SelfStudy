@@ -1,6 +1,12 @@
 package com.imooc.algorithm.sort;
 
 public class QuickSort implements SortInterface {
+
+    /**
+     * 3,1,2,5,4,6,9,7,10,8
+     *
+     */
+
     public QuickSort() {
 
     }
